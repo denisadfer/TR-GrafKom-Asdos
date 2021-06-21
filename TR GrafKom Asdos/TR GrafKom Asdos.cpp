@@ -5,62 +5,62 @@
 #include <GL/glut.h>
 #endif
 #include <stdlib.h>
-#include <math.h>
-
 void init(void);
-void tampil(void);
+void display(void);
 void keyboard(unsigned char, int, int);
-void ukuran(int, int);
-void mouse(int button, int state, int x, int y);
-void mouseMotion(int x, int y);
-
-float xrot = 0.0f;
-float yrot = 0.0f;
-float xdiff = 0.0f;
-float ydiff = 0.0f;
-bool mouseDown = false;
+void resize(int, int);
+void mouseMove(int x, int y);
+void mouseButton(int button, int state, int x, int y);
+using namespace std;
+float xrot = 0;
+float yrot = 0;
+float xdiff = 0;
+float ydiff = 0;
+bool mousedown = false;
 int is_depth;
-int a = 0;
-
 int main(int argc, char** argv)
 {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
     glutInitWindowSize(800, 600);
-    glutInitWindowPosition(250, 80);
-    glutCreateWindow("City University of Hongkong");
+    glutInitWindowPosition(40, 40);
+    glutCreateWindow("Ivan Sukma Hanindria - 672018048");
     init();
-    glutDisplayFunc(tampil);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glDepthFunc(GL_LEQUAL);
+    glShadeModel(GL_SMOOTH);
+    glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
+    glutDisplayFunc(display);
     glutKeyboardFunc(keyboard);
-    glutReshapeFunc(ukuran);
-    glutMouseFunc(mouse);
-    glutMotionFunc(mouseMotion);
+    glutMouseFunc(mouseButton);
+    glutMotionFunc(mouseMove);
+    glutReshapeFunc(resize);
     glutMainLoop();
     return 0;
 }
-
 void init(void)
 {
-    glClearColor(0.3, 0.5, 0.8, 1);
-    glMatrixMode(GL_PROJECTION);
+    glClearColor(0.0, 1.0, 0.906, 0.0);
     glEnable(GL_DEPTH_TEST);
     //glEnable(GL_LIGHTING);
     glEnable(GL_COLOR_MATERIAL);
     glEnable(GL_LIGHT0);
     is_depth = 1;
     glMatrixMode(GL_MODELVIEW);
-    glPointSize(2.0);
-    glLineWidth(4.0f);
-}
+    glPointSize(20.0);
+    glLineWidth(6.0f);
 
-void tampil(void) {
+}
+void display(void)
+{
     if (is_depth)
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     else
         glClear(GL_COLOR_BUFFER_BIT);
-
-    glBlendFunc(GL_ONE_MINUS_SRC_ALPHA, GL_SRC_COLOR);
     glPushMatrix();
+    glRotatef(xrot, 1, 0, 0);
+    glRotatef(yrot, 0, 1, 0);
 
     glBegin(GL_POLYGON);//alas
     glColor3f(0.8, 0.6, 0.6);
@@ -549,7 +549,7 @@ void tampil(void) {
     glVertex3f(360, 0, 160);
     glVertex3f(360, 50, 160);
     glVertex3f(90, 50, 160);
-    glEnd(); 
+    glEnd();
     glBegin(GL_POLYGON);//bangunan bawah2 fondasi belakang
     glColor3f(0.8, 0.8, 0.8);
     glVertex3f(90, 0, -160);
@@ -575,31 +575,46 @@ void tampil(void) {
     glPopMatrix();
     glutSwapBuffers();
 }
-
-void mouseMotion(int x, int y) {
-    if (mouseDown) {
-        glLoadIdentity();
-        gluLookAt(0.0f, 0.0f, 3.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
-        glRotatef(xrot, 1.0f, 0.0f, 0.0f);
-        glRotatef(yrot, 0.0f, 1.0f, 0.0f);
+void mouseMove(int x, int y) {
+    if (mousedown) {
         yrot = x - xdiff;
         xrot = y + ydiff;
+
         glutPostRedisplay();
     }
 }
 
-void mouse(int button, int state, int x, int y) {
+void mouseButton(int button, int state, int x, int y) {
     if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-        mouseDown = true;
+        mousedown = true;
         xdiff = x - yrot;
         ydiff = -y + xrot;
     }
     else {
-        mouseDown = false;
+        mousedown = false;
     }
     glutPostRedisplay();
 }
-
+/*
+Cara penggunaan :
++++++++++++++++++++++----------------------------------------------------+++++++++++++
+untuk penggunaan mouse langsung klik rumah dan arahkan
++++++++++++++++++++++----------------------------------------------------+++++++++++++
+tombol pada keyboard:
+"a": ke kiri
+"d": ke kanan
+"w": ke depan
+"s": ke belakang
+"z" : ke atas
+"x" : ke bawah
+"i" : rotasi ke bawah terhadap sumbu X
+"k" : rotasi ke atas terhadap sumbu X
+"j" : rotasi ke kiri terhadap sumbu Y
+"l" : rotasi ke kanan terhadap sumbu Y
+"m" : rotasi ke kiri terhadap sumbu Z
+"n" : rotasi ke kanan terhadap sumbu Z
+"5" : transparankan rumah
+*/
 void keyboard(unsigned char key, int x, int y)
 {
     switch (key)
@@ -664,14 +679,14 @@ void keyboard(unsigned char key, int x, int y)
             glEnable(GL_DEPTH_TEST);
         }
     }
-    tampil();
+    display();
 }
-
-void ukuran(int lebar, int tinggi) {
-    if (tinggi == 0)tinggi = 1;
+void resize(int width, int height)
+{
+    if (height == 0) height = 1;
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(60.0, lebar / tinggi, 30.0, 2000.0);
+    gluPerspective(60.0, width / height, 30.0, 2000.0);
     glTranslatef(0.0, -500.0, -1500.0);
     glMatrixMode(GL_MODELVIEW);
 }
