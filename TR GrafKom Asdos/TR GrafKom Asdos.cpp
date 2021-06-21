@@ -441,6 +441,13 @@ void display(void)
     glVertex3f(-40, 250, -80);
     glVertex3f(-40, 270, -80);
     glEnd();
+    glBegin(GL_POLYGON);//bangunan bawah atas ijo1 tutup kanan
+    glColor3f(0.2, 0.3, 0.2);
+    glVertex3f(-40, 250, -160);
+    glVertex3f(-40, 250, -80);
+    glVertex3f(-40, 270, -80);
+    glVertex3f(-40, 270, -160);
+    glEnd();
     glBegin(GL_POLYGON);//bangunan bawah1 atas ijo2 lapangan
     glColor3f(0.3, 0.5, 0.3);
     glVertex3f(-280, 250, -80);
@@ -484,6 +491,13 @@ void display(void)
     glVertex3f(-40, 250, 120);
     glVertex3f(-40, 270, 120);
     glEnd();
+    glBegin(GL_POLYGON);//bangunan bawah atas ijo3 tutup kanan
+    glColor3f(0.2, 0.3, 0.2);
+    glVertex3f(-40, 250, 120);
+    glVertex3f(-40, 250, 160);
+    glVertex3f(-40, 270, 160);
+    glVertex3f(-40, 270, 120);
+    glEnd();
     glBegin(GL_LINES);//bangunan bawah1 garis atas1
     glColor3f(0.3, 0.3, 0.3);
     glVertex3f(-360, 270, 160);
@@ -525,7 +539,21 @@ void display(void)
     glVertex3f(-390, 250, -160);
     glVertex3f(-40, 250, -160);
     glVertex3f(-40, 269, -160);
-    glVertex3f(-360, 269, -160);
+    glVertex3f(-360, 269, -160); 
+    glEnd();
+    glBegin(GL_POLYGON);//bangunan bawah alas
+    glColor3f(0.8, 0.8, 0.8);
+    glVertex3f(-360, 51, 160);
+    glVertex3f(360, 51, 160);
+    glVertex3f(360, 51, -160);
+    glVertex3f(-360, 51, -160);
+    glEnd();
+    glBegin(GL_POLYGON);//bangunan bawah atas tutup
+    glColor3f(0.5, 0.4, 0.4);
+    glVertex3f(-40, 250, 160);
+    glVertex3f(360, 250, 160);
+    glVertex3f(360, 250, -160);
+    glVertex3f(-40, 250, -160);
     glEnd();
 
     glBegin(GL_POLYGON);//bangunan bawah1.5 depan hitam
@@ -535,41 +563,69 @@ void display(void)
     glVertex3f(15, 270, 160);
     glVertex3f(-40, 270, 160);
     glEnd();
+    glBegin(GL_POLYGON);//bangunan bawah1.5 belakang hitam
+    glColor3f(0.3, 0.3, 0.3);
+    glVertex3f(-40, 50, -160);
+    glVertex3f(30, 50, -160);
+    glVertex3f(15, 270, -160);
+    glVertex3f(-40, 270, -160);
+    glEnd();
 
     glBegin(GL_POLYGON);//bangunan bawah2 fondasi atas
-    glColor3f(0.8, 0.8, 0.8);
+    glColor3f(0.5, 0.5, 0.5);
     glVertex3f(90, 50, 160);
     glVertex3f(360, 50, 160);
     glVertex3f(360, 50, -160);
     glVertex3f(90, 50, -160);
     glEnd();
     glBegin(GL_POLYGON);//bangunan bawah2 fondasi depan
-    glColor3f(0.8, 0.8, 0.8);
+    glColor3f(0.5, 0.5, 0.5);
     glVertex3f(90, 0, 160);
     glVertex3f(360, 0, 160);
     glVertex3f(360, 50, 160);
     glVertex3f(90, 50, 160);
     glEnd();
     glBegin(GL_POLYGON);//bangunan bawah2 fondasi belakang
-    glColor3f(0.8, 0.8, 0.8);
+    glColor3f(0.5, 0.5, 0.5);
     glVertex3f(90, 0, -160);
     glVertex3f(360, 0, -160);
     glVertex3f(360, 50, -160);
     glVertex3f(90, 50, -160);
     glEnd();
     glBegin(GL_POLYGON);//bangunan bawah2 fondasi kanan
-    glColor3f(0.8, 0.8, 0.8);
+    glColor3f(0.5, 0.5, 0.5);
     glVertex3f(360, 0, 160);
     glVertex3f(360, 0, -160);
     glVertex3f(360, 50, -160);
     glVertex3f(360, 50, 160);
     glEnd();
     glBegin(GL_POLYGON);//bangunan bawah2 fondasi kiri
-    glColor3f(0.8, 0.8, 0.8);
+    glColor3f(0.5, 0.5, 0.5);
     glVertex3f(90, 0, 160);
     glVertex3f(90, 0, -160);
     glVertex3f(90, 50, -160);
     glVertex3f(90, 50, 160);
+    glEnd();
+    glBegin(GL_POLYGON);//bangunan bawah2 depan putih1
+    glColor3f(0.8, 0.8, 0.8);
+    glVertex3f(30, 51, 160);
+    glVertex3f(360, 51, 160);
+    glVertex3f(360, 270, 160);
+    glVertex3f(15, 270, 160);
+    glEnd();
+    glBegin(GL_POLYGON);//bangunan bawah2 belakang putih1
+    glColor3f(0.8, 0.8, 0.8);
+    glVertex3f(30, 51, -160);
+    glVertex3f(360, 51, -160);
+    glVertex3f(360, 270, -160);
+    glVertex3f(15, 270, -160);
+    glEnd();
+    glBegin(GL_POLYGON);//bangunan kanan putih
+    glColor3f(0.8, 0.8, 0.8);
+    glVertex3f(360, 51, 160);
+    glVertex3f(360, 51, -160);
+    glVertex3f(360, 270, -160);
+    glVertex3f(360, 270, 160);
     glEnd();
 
     glPopMatrix();
