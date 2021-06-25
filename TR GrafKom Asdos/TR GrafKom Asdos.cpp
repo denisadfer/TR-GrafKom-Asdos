@@ -1487,6 +1487,353 @@ void display(void)
     glVertex3f(280, 360, -30);
     glEnd();
 
+    //hiasan atau aksen gedung tinggi 2
+
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 2 1
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(260, 950, -240.1);
+    glVertex3f(280, 950, -240.1);
+    glVertex3f(280, 1050, -240.1);
+    glVertex3f(260, 1050, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 2 2
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(200, 950, -240.1);
+    glVertex3f(220, 950, -240.1);
+    glVertex3f(220, 1050, -240.1);
+    glVertex3f(200, 1050, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 2 3
+    glColor3f(0.556, 0.556, 0.556);
+    glVertex3f(170, 950, -240.1);
+    glVertex3f(190, 950, -240.1);
+    glVertex3f(190, 1050, -240.1);
+    glVertex3f(170, 1050, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 2 4
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(80, 950, -240.1);
+    glVertex3f(90, 950, -240.1);
+    glVertex3f(90, 1050, -240.1);
+    glVertex3f(80, 1050, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 2 5
+    glColor3f(0.556, 0.556, 0.556);
+    glVertex3f(60, 950, -240.1);
+    glVertex3f(75, 950, -240.1);
+    glVertex3f(75, 1050, -240.1);
+    glVertex3f(60, 1050, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 2 6
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(10, 950, -240.1);
+    glVertex3f(30, 950, -240.1);
+    glVertex3f(30, 1050, -240.1);
+    glVertex3f(10, 1050, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 2 7
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(-20, 950, -240.1);
+    glVertex3f(-5, 950, -240.1);
+    glVertex3f(-5, 1050, -240.1);
+    glVertex3f(-20, 1050, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 2 8
+    glColor3f(0.556, 0.556, 0.556);
+    glVertex3f(-60, 950, -240.1);
+    glVertex3f(-45, 950, -240.1);
+    glVertex3f(-45, 1050, -240.1);
+    glVertex3f(-60, 1050, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 2 9
+    glColor3f(0.556, 0.556, 0.556);
+    glVertex3f(-80, 950, -240.1);
+    glVertex3f(-65, 950, -240.1);
+    glVertex3f(-65, 1050, -240.1);
+    glVertex3f(-80, 1050, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 2 10
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(-130, 950, -240.1);
+    glVertex3f(-115, 950, -240.1);
+    glVertex3f(-115, 1050, -240.1);
+    glVertex3f(-130, 1050, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 3 1
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(260, 730, -240.1);
+    glVertex3f(280, 730, -240.1);
+    glVertex3f(280, 940, -240.1);
+    glVertex3f(260, 940, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 3 2
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(200, 730, -240.1);
+    glVertex3f(210, 730, -240.1);
+    glVertex3f(210, 940, -240.1);
+    glVertex3f(200, 940, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 3 3
+    glColor3f(0.556, 0.556, 0.556);
+    glVertex3f(170, 730, -240.1);
+    glVertex3f(190, 730, -240.1);
+    glVertex3f(190, 940, -240.1);
+    glVertex3f(170, 940, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 3 4
+    glColor3f(0.556, 0.556, 0.556);
+    glVertex3f(130, 730, -240.1);
+    glVertex3f(150, 730, -240.1);
+    glVertex3f(150, 940, -240.1);
+    glVertex3f(130, 940, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 3 5
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(90, 730, -240.1);
+    glVertex3f(110, 730, -240.1);
+    glVertex3f(110, 940, -240.1);
+    glVertex3f(90, 940, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 3 6
+    glColor3f(0.556, 0.556, 0.556);
+    glVertex3f(40, 730, -240.1);
+    glVertex3f(70, 730, -240.1);
+    glVertex3f(70, 940, -240.1);
+    glVertex3f(40, 940, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 3 7
+    glColor3f(0.556, 0.556, 0.556);
+    glVertex3f(0, 730, -240.1);
+    glVertex3f(20, 730, -240.1);
+    glVertex3f(20, 940, -240.1);
+    glVertex3f(0, 940, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 3 7
+    glColor3f(0.556, 0.556, 0.556);
+    glVertex3f(-40, 730, -240.1);
+    glVertex3f(-20, 730, -240.1);
+    glVertex3f(-20, 940, -240.1);
+    glVertex3f(-40, 940, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 4 1
+    glColor3f(0.556, 0.556, 0.556);
+    glVertex3f(250, 540, -240.1);
+    glVertex3f(270, 540, -240.1);
+    glVertex3f(270, 720, -240.1);
+    glVertex3f(250, 720, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 4 2
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(200, 540, -240.1);
+    glVertex3f(220, 540, -240.1);
+    glVertex3f(220, 720, -240.1);
+    glVertex3f(200, 720, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 4 3
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(150, 540, -240.1);
+    glVertex3f(170, 540, -240.1);
+    glVertex3f(170, 720, -240.1);
+    glVertex3f(150, 720, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 4 4
+    glColor3f(0.556, 0.556, 0.556);
+    glVertex3f(80, 540, -240.1);
+    glVertex3f(100, 540, -240.1);
+    glVertex3f(100, 720, -240.1);
+    glVertex3f(80, 720, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 4 5
+    glColor3f(0.556, 0.556, 0.556);
+    glVertex3f(40, 540, -240.1);
+    glVertex3f(60, 540, -240.1);
+    glVertex3f(60, 720, -240.1);
+    glVertex3f(40, 720, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 4 6
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(-30, 540, -240.1);
+    glVertex3f(0, 540, -240.1);
+    glVertex3f(0, 720, -240.1);
+    glVertex3f(-30, 720, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 4 7
+    glColor3f(0.556, 0.556, 0.556);
+    glVertex3f(-100, 540, -240.1);
+    glVertex3f(-80, 540, -240.1);
+    glVertex3f(-80, 720, -240.1);
+    glVertex3f(-100, 720, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 5 1
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(260, 340, -240.1);
+    glVertex3f(280, 340, -240.1);
+    glVertex3f(280, 530, -240.1);
+    glVertex3f(260, 530, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 5 2
+    glColor3f(0.556, 0.556, 0.556);
+    glVertex3f(200, 340, -240.1);
+    glVertex3f(220, 340, -240.1);
+    glVertex3f(220, 530, -240.1);
+    glVertex3f(200, 530, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 5 3
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(150, 340, -240.1);
+    glVertex3f(170, 340, -240.1);
+    glVertex3f(170, 530, -240.1);
+    glVertex3f(150, 530, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 5 4
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(100, 340, -240.1);
+    glVertex3f(120, 340, -240.1);
+    glVertex3f(120, 530, -240.1);
+    glVertex3f(100, 530, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 5 5
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(20, 340, -240.1);
+    glVertex3f(40, 340, -240.1);
+    glVertex3f(40, 530, -240.1);
+    glVertex3f(20, 530, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 5 6
+    glColor3f(0.556, 0.556, 0.556);
+    glVertex3f(-20, 340, -240.1);
+    glVertex3f(0, 340, -240.1);
+    glVertex3f(0, 530, -240.1);
+    glVertex3f(-20, 530, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 5 7
+    glColor3f(0.556, 0.556, 0.556);
+    glVertex3f(-70, 340, -240.1);
+    glVertex3f(-50, 340, -240.1);
+    glVertex3f(-50, 530, -240.1);
+    glVertex3f(-70, 530, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 5 8
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(-120, 340, -240.1);
+    glVertex3f(-100, 340, -240.1);
+    glVertex3f(-100, 530, -240.1);
+    glVertex3f(-120, 530, -240.1);
+    glEnd();
+
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 6 1
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(320, 150, -240.1);
+    glVertex3f(340, 150, -240.1);
+    glVertex3f(340, 320, -240.1);
+    glVertex3f(320, 320, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 6 2
+    glColor3f(0.556, 0.556, 0.556);
+    glVertex3f(280, 150, -240.1);
+    glVertex3f(300, 150, -240.1);
+    glVertex3f(300, 320, -240.1);
+    glVertex3f(280, 320, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 6 3
+    glColor3f(0.556, 0.556, 0.556);
+    glVertex3f(220, 150, -240.1);
+    glVertex3f(250, 150, -240.1);
+    glVertex3f(250, 320, -240.1);
+    glVertex3f(220, 320, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 6 4
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(140, 150, -240.1);
+    glVertex3f(160, 150, -240.1);
+    glVertex3f(160, 320, -240.1);
+    glVertex3f(140, 320, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 6 5
+    glColor3f(0.556, 0.556, 0.556);
+    glVertex3f(50, 150, -240.1);
+    glVertex3f(70, 150, -240.1);
+    glVertex3f(70, 320, -240.1);
+    glVertex3f(50, 320, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 6 6
+    glColor3f(0.556, 0.556, 0.556);
+    glVertex3f(0, 150, -240.1);
+    glVertex3f(20, 150, -240.1);
+    glVertex3f(20, 320, -240.1);
+    glVertex3f(0, 320, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 6 7
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(-40, 150, -240.1);
+    glVertex3f(-20, 150, -240.1);
+    glVertex3f(-20, 320, -240.1);
+    glVertex3f(-40, 320, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 6 8
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(-100, 150, -240.1);
+    glVertex3f(-80, 150, -240.1);
+    glVertex3f(-80, 320, -240.1);
+    glVertex3f(-100, 320, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 7 1
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(300, 10, -240.1);
+    glVertex3f(320, 10, -240.1);
+    glVertex3f(320, 140, -240.1);
+    glVertex3f(300, 140, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 7 2
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(260, 10, -240.1);
+    glVertex3f(280, 10, -240.1);
+    glVertex3f(280, 140, -240.1);
+    glVertex3f(260, 140, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 7 3
+    glColor3f(0.556, 0.556, 0.556);
+    glVertex3f(180, 10, -240.1);
+    glVertex3f(200, 10, -240.1);
+    glVertex3f(200, 140, -240.1);
+    glVertex3f(180, 140, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 7 4
+    glColor3f(0.556, 0.556, 0.556);
+    glVertex3f(90, 10, -240.1);
+    glVertex3f(120, 10, -240.1);
+    glVertex3f(120, 140, -240.1);
+    glVertex3f(90, 140, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 7 5
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(40, 10, -240.1);
+    glVertex3f(70, 10, -240.1);
+    glVertex3f(70, 140, -240.1);
+    glVertex3f(40, 140, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 7 6
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(0, 10, -240.1);
+    glVertex3f(20, 10, -240.1);
+    glVertex3f(20, 140, -240.1);
+    glVertex3f(0, 140, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 7 7
+    glColor3f(0.356, 0.356, 0.356);
+    glVertex3f(-70, 10, -240.1);
+    glVertex3f(-50, 10, -240.1);
+    glVertex3f(-50, 140, -240.1);
+    glVertex3f(-70, 140, -240.1);
+    glEnd();
+    glBegin(GL_POLYGON);//hiasan atau aksen gedung tinggi 7 8
+    glColor3f(0.556, 0.556, 0.556);
+    glVertex3f(-130, 10, -240.1);
+    glVertex3f(-110, 10, -240.1);
+    glVertex3f(-110, 140, -240.1);
+    glVertex3f(-130, 140, -240.1);
+    glEnd();
+
     glPopMatrix();
     glutSwapBuffers();
 }
