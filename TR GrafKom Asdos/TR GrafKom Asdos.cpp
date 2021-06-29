@@ -5,6 +5,7 @@
 #include <GL/glut.h>
 #endif
 #include <stdlib.h>
+#include <stdio.h>
 void init(void);
 void display(void);
 void keyboard(unsigned char, int, int);
@@ -386,7 +387,7 @@ void display(void)
     glVertex3f(-360, 270, -160);
     glVertex3f(-360, 270, 160);
     glEnd();
-    glBegin(GL_LINES);//bangunan bawah1 kiri garis depan1 
+    glBegin(GL_LINES);//bangunan bawah1 kiri garis depan1
     glColor3f(0.3, 0.3, 0.3);
     glVertex3f(-360, 50, 160);
     glVertex3f(-390, 250, 160);
@@ -396,7 +397,7 @@ void display(void)
     glVertex3f(-390, 250, 160);
     glVertex3f(-360, 270, 160);
     glEnd();
-    glBegin(GL_LINES);//bangunan bawah1 kiri garis belakang1 
+    glBegin(GL_LINES);//bangunan bawah1 kiri garis belakang1
     glColor3f(0.3, 0.3, 0.3);
     glVertex3f(-360, 50, -160);
     glVertex3f(-390, 250, -160);
@@ -537,7 +538,7 @@ void display(void)
     glVertex3f(-390, 250, -160);
     glVertex3f(-40, 250, -160);
     glVertex3f(-40, 269, -160);
-    glVertex3f(-360, 269, -160); 
+    glVertex3f(-360, 269, -160);
     glEnd();
     glBegin(GL_POLYGON);//bangunan bawah alas
     glColor3f(0.8, 0.8, 0.8);
@@ -774,6 +775,15 @@ void display(void)
     glVertex3f(-130, 550, -30);
     glVertex3f(-130, 550, 170);
     glEnd();
+    int k = -130;
+    for (float i = 550; i > 340; i -= 50) {
+        glBegin(GL_LINES);//gedung tinggi 1 kiri trap bawah aksen
+        glColor3f(1, 1, 1);
+        glVertex3f(k - 0.5, i, 170);
+        glVertex3f(k - 0.5, i, -30);
+        glEnd();
+        k = k - 5;
+    }
     glBegin(GL_POLYGON);//gedung tinggi 1 kanan trapesium bawah
     glColor3f(0.7, 0.9, 0.7);
     glVertex3f(300, 340, 170);
@@ -782,6 +792,13 @@ void display(void)
     glVertex3f(300, 550, -30);
     glVertex3f(300, 550, 170);
     glEnd();
+    for (float i = 550; i > 340; i -= 50) {
+        glBegin(GL_LINES);//gedung tinggi 1 kanan trap bawah aksen
+        glColor3f(1, 1, 1);
+        glVertex3f(300.1, i, 170);
+        glVertex3f(300.1, i, -30);
+        glEnd();
+    }
     glBegin(GL_POLYGON);//gedung tinggi 1 depan trapesium bawah
     glColor3f(0.7, 0.9, 0.7);
     glVertex3f(-150, 340, 170);
@@ -790,6 +807,15 @@ void display(void)
     glVertex3f(300, 550, 170);
     glVertex3f(-130, 550, 170);
     glEnd();
+    k = -130;
+    for (float i = 550; i > 340; i -= 50) {
+        glBegin(GL_LINES);//gedung tinggi 1 depan trap bawah aksen
+        glColor3f(1, 1, 1);
+        glVertex3f(k, i, 170.1);
+        glVertex3f(300, i, 170.1);
+        glEnd();
+        k = k - 4;
+    }
     glBegin(GL_POLYGON);//gedung tinggi 1 belakang trapesium bawah
     glColor3f(0.7, 0.9, 0.7);
     glVertex3f(-150, 340, -30);
@@ -806,6 +832,13 @@ void display(void)
     glVertex3f(-130, 950, -30);
     glVertex3f(-130, 950, 170);
     glEnd();
+    for (float i = 580; i < 950; i += 50) {
+        glBegin(GL_LINES);//gedung tinggi 1 kiri atas aksen
+        glColor3f(1, 1, 1);
+        glVertex3f(-130.1, i, 170);
+        glVertex3f(-130.1, i, -30);
+        glEnd();
+    }
     glBegin(GL_POLYGON);//gedung tinggi 1 kanan atas
     glColor3f(0.5, 0.7, 0.5);
     glVertex3f(300, 550, 170);
@@ -814,6 +847,13 @@ void display(void)
     glVertex3f(300, 950, -30);
     glVertex3f(300, 950, 170);
     glEnd();
+    for (float i = 580; i < 950; i += 50) {
+        glBegin(GL_LINES);//gedung tinggi 1 kanan atas aksen
+        glColor3f(1, 1, 1);
+        glVertex3f(300.1, i, 170);
+        glVertex3f(300.1, i, -30);
+        glEnd();
+    }
     glBegin(GL_POLYGON);//gedung tinggi 1 depan atas
     glColor3f(0.5, 0.7, 0.5);
     glVertex3f(-130, 550, 170);
@@ -822,6 +862,14 @@ void display(void)
     glVertex3f(300, 950, 170);
     glVertex3f(-130, 950, 170);
     glEnd();
+    for (float i = 580; i < 950; i += 50) {
+        glBegin(GL_LINES);//gedung tinggi 1 depan atas aksen
+        glColor3f(1, 1, 1);
+        glVertex3f(-130, i, 170.1);
+        glVertex3f(300, i, 170.1);
+        glEnd();
+    }
+    glLineWidth(6.0f);
     glBegin(GL_POLYGON);//gedung tinggi 1 belakang atas
     glColor3f(0.5, 0.7, 0.5);
     glVertex3f(-130, 550, -30);
@@ -1161,6 +1209,87 @@ void display(void)
     glVertex3f(350, 320, -180);
     glVertex3f(350, 320, -240);
     glEnd();
+    int j = 0;
+    for (float i = 395; i > 349; i -= 5) {
+        glBegin(GL_POLYGON);//gedung tinggi 2 bawah kanan1 tangga alas atas
+        glColor3f(0.9, 0.9, 0.9);
+        glVertex3f(350, j, -180);
+        glVertex3f(350, j, -240);
+        glVertex3f(i, j, -240);
+        glVertex3f(i, j, -180);
+        glEnd();
+        j += 5;
+        glBegin(GL_POLYGON);//gedung tinggi 2 bawah kanan1 tangga alas atas
+        glColor3f(0.9, 0.9, 0.9);
+        glVertex3f(350, j, -180);
+        glVertex3f(350, j, -240);
+        glVertex3f(i, j, -240);
+        glVertex3f(i, j, -180);
+        glEnd();
+        //i=i-4;
+
+    }
+    j = 395;
+    for (float i = 0; i < 44; i += 5) {
+        glBegin(GL_POLYGON);//gedung tinggi 2 bawah kanan1 tangga alas depan
+        glColor3f(0.6, 0.6, 0.6);
+        glVertex3f(j, i, -180);
+        glVertex3f(j, i, -240);
+        glVertex3f(j, i + 5, -240);
+        glVertex3f(j, i + 5, -180);
+        glEnd();
+        //i=i-4;
+        j -= 5;
+    }
+    j = 0;
+    for (float i = 395; i > 349; i -= 5) {
+        glBegin(GL_POLYGON);//gedung tinggi 2 bawah kanan1 tangga alas kanan
+        glColor3f(0.2, 0.2, 0.2);
+        glVertex3f(350, j, -240);
+        glVertex3f(i, j, -240);
+        glVertex3f(i, j + 5, -240);
+        glVertex3f(350, j + 5, -240);
+        glEnd();
+        //i=i-4;
+        j += 5;
+    }
+    j = 0;
+    for (float i = 395; i > 349; i -= 5) {
+        glBegin(GL_POLYGON);//gedung tinggi 2 bawah kanan1 tangga alas kiri
+        glColor3f(0.2, 0.2, 0.2);
+        glVertex3f(350, j, -180);
+        glVertex3f(i, j, -180);
+        glVertex3f(i, j + 5, -180);
+        glVertex3f(350, j + 5, -180);
+        glEnd();
+        //i=i-4;
+        j += 5;
+    }
+    glPushMatrix();//gedung tinggi 2 bawah kanan1 pintu
+    glColor3ub(102, 51, 0);
+    glTranslatef(350, 45, -180);
+    glRotatef(90, 0, 1, 0);
+    glScalef(50, 100, 5);
+    glTranslatef(0.6, 0.5, -0.1);
+    glutSolidCube(1);
+    glPopMatrix();
+    glPushMatrix();//gedung tinggi 2 bawah kanan1 pintu kunci
+    glColor3ub(26, 38, 45);
+    glTranslatef(350, 45, -180);
+    glRotatef(90, 0, 1, 0);
+    glTranslatef(10, 45, -0.5);
+    glutSolidSphere(4, 32, 32);
+    glPopMatrix();
+
+    glBegin(GL_POLYGON);//gedung tinggi 2 lantai belakang pintu
+    glColor3f(0.88, 0.78, 0.78);
+    glVertex3f(350, 45, -240);
+    glVertex3f(350, 45, -180);
+    glVertex3f(-150, 45, -180);
+    glVertex3f(-150, 45, -240);
+    glEnd();
+
+
     glBegin(GL_POLYGON);//gedung tinggi 2 bawah kanan2
     glColor3f(0.88, 0.78, 0.78);
     glVertex3f(350, 300, -240);
@@ -3080,7 +3209,7 @@ void display(void)
     glEnd();
 
     //meja
-    
+
     //meja1
     glBegin(GL_POLYGON);//meja1 1
     glColor3f(0.3, 0.2, 0.2);
@@ -3153,7 +3282,7 @@ void display(void)
     glVertex3f(-150, 90, 30);
     glVertex3f(-260, 90, 30);
     glEnd();
-    
+
 
     glPopMatrix();
     glutSwapBuffers();
