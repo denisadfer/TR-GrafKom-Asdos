@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 void init(void);
+void timer(int value);
 void display(void);
 void keyboard(unsigned char, int, int);
 void resize(int, int);
@@ -17,6 +18,8 @@ float xrot = 0;
 float yrot = 0;
 float xdiff = 0;
 float ydiff = 0;
+float at1 = 0;
+float at2 = 0;
 bool mousedown = false;
 int is_depth;
 int main(int argc, char** argv)
@@ -27,6 +30,7 @@ int main(int argc, char** argv)
     glutInitWindowPosition(40, 40);
     glutCreateWindow("City University of Hong Kong");
     init();
+    glutTimerFunc(1, timer, 0);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glDepthFunc(GL_LEQUAL);
@@ -51,7 +55,27 @@ void init(void)
     glMatrixMode(GL_MODELVIEW);
     glPointSize(20.0);
     glLineWidth(6.0f);
+}
 
+void timer(int value)
+{
+
+    if (at1 == 0) {
+        at1 = 15;
+    }
+    else if (at1 == 15) {
+        at1 = 0;
+    }
+
+    if (at2 == 0) {
+        at2 = -15;
+    }
+    else if (at2 == -15) {
+        at2 = 0;
+    }
+
+    glutPostRedisplay();
+    glutTimerFunc(1000, timer, 10);
 }
 
 void display(void)
@@ -568,6 +592,41 @@ void display(void)
     glVertex3f(30, 50, -160);
     glVertex3f(15, 270, -160);
     glVertex3f(-40, 270, -160);
+    glEnd();
+    glBegin(GL_POLYGON);//bangunan bawah1.5 belakang2 hitam
+    glColor3f(0.3, 0.3, 0.3);
+    glVertex3f(-40, 50, -180);
+    glVertex3f(30, 50, -180);
+    glVertex3f(15, 270, -180);
+    glVertex3f(-40, 270, -180);
+    glEnd();
+    glBegin(GL_POLYGON);//bangunan bawah1.5 belakang3 hitam
+    glColor3f(0.3, 0.3, 0.3);
+    glVertex3f(-40, 50, -160);
+    glVertex3f(-40, 50, -180);
+    glVertex3f(-40, 270, -180);
+    glVertex3f(-40, 270, -160);
+    glEnd();
+    glBegin(GL_POLYGON);//bangunan bawah1.5 belakang4 hitam
+    glColor3f(0.3, 0.3, 0.3);
+    glVertex3f(30, 50, -160);
+    glVertex3f(30, 50, -180);
+    glVertex3f(15, 270, -180);
+    glVertex3f(15, 270, -160);
+    glEnd();
+    glBegin(GL_POLYGON);//bangunan bawah1.5 belakang5 hitam
+    glColor3f(0.3, 0.3, 0.3);
+    glVertex3f(-40, 50, -160);
+    glVertex3f(-40, 50, -180);
+    glVertex3f(30, 50, -180);
+    glVertex3f(30, 50, -160);
+    glEnd();
+    glBegin(GL_POLYGON);//bangunan bawah1.5 belakang6 hitam
+    glColor3f(0.3, 0.3, 0.3);
+    glVertex3f(-40, 270, -160);
+    glVertex3f(-40, 270, -180);
+    glVertex3f(15, 270, -180);
+    glVertex3f(15, 270, -160);
     glEnd();
 
     glBegin(GL_POLYGON);//bangunan bawah2 fondasi atas
@@ -1204,10 +1263,24 @@ void display(void)
     glEnd();
     glBegin(GL_POLYGON);//gedung tinggi 2 bawah kanan1
     glColor3f(0.88, 0.78, 0.78);
-    glVertex3f(350, 0, -240);
-    glVertex3f(350, 0, -180);
+    glVertex3f(350, 110, -240);
+    glVertex3f(350, 110, -180);
     glVertex3f(350, 320, -180);
     glVertex3f(350, 320, -240);
+    glEnd();
+    glBegin(GL_POLYGON);//gedung tinggi 2 bawah kanan2
+    glColor3f(0.88, 0.78, 0.78);
+    glVertex3f(350, 110, -195);
+    glVertex3f(350, 110, -180);
+    glVertex3f(350, 0, -180);
+    glVertex3f(350, 0, -195);
+    glEnd();
+    glBegin(GL_POLYGON);//gedung tinggi 2 bawah kanan2
+    glColor3f(0.88, 0.78, 0.78);
+    glVertex3f(350, 110, -240);
+    glVertex3f(350, 110, -225);
+    glVertex3f(350, 0, -225);
+    glVertex3f(350, 0, -240);
     glEnd();
     int j = 0;
     for (float i = 395; i > 349; i -= 5) {
@@ -1265,7 +1338,7 @@ void display(void)
         //i=i-4;
         j += 5;
     }
-    glPushMatrix();//gedung tinggi 2 bawah kanan1 pintu
+    /*glPushMatrix();//gedung tinggi 2 bawah kanan1 pintu
     glColor3ub(102, 51, 0);
     glTranslatef(350, 45, -180);
     glRotatef(90, 0, 1, 0);
@@ -1288,7 +1361,29 @@ void display(void)
     glVertex3f(-150, 45, -180);
     glVertex3f(-150, 45, -240);
     glEnd();
+    */
 
+    glPushMatrix();
+    glTranslatef(0, 0, at1);
+    glBegin(GL_QUADS);//pintu kampus kiri
+    glColor3f(0.702f, 0.29f, 0.0f);
+    glVertex3f(351, 45, -195);
+    glVertex3f(351, 45, -210);
+    glVertex3f(351, 110, -210);
+    glVertex3f(351, 110, -195);
+    glEnd();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0, 0, at2);
+    glBegin(GL_QUADS);//pintu kampus kanan
+    glColor3f(0.702f, 0.29f, 0.0f);
+    glVertex3f(351, 45, -210);
+    glVertex3f(351, 45, -225);
+    glVertex3f(351, 110, -225);
+    glVertex3f(351, 110, -210);
+    glEnd();
+    glPopMatrix();
 
     glBegin(GL_POLYGON);//gedung tinggi 2 bawah kanan2
     glColor3f(0.88, 0.78, 0.78);
