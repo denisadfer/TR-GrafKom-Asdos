@@ -14,12 +14,15 @@ void resize(int, int);
 void mouseMove(int x, int y);
 void mouseButton(int button, int state, int x, int y);
 using namespace std;
+
 float xrot = 0;
 float yrot = 0;
 float xdiff = 0;
 float ydiff = 0;
 float at1 = 0;
 float at2 = 0;
+float tva = -268.1;
+float tvb = 17;
 bool mousedown = false;
 int is_depth;
 int main(int argc, char** argv)
@@ -59,6 +62,8 @@ void init(void)
 
 void timer(int value)
 {
+    glutPostRedisplay();
+    glutTimerFunc(1000, timer, 10);
 
     if (at1 == 0) {
         at1 = 15;
@@ -73,9 +78,16 @@ void timer(int value)
     else if (at2 == -15) {
         at2 = 0;
     }
+    if(tvb>-39 && tvb<29){
+        tvb-=6;
+        tva=-268.1;
+    }
+    if(tvb < -36){
+        tva = -267.9;
+        tvb=28;
+    }
 
-    glutPostRedisplay();
-    glutTimerFunc(1000, timer, 10);
+
 }
 
 void display(void)
@@ -1353,7 +1365,6 @@ void display(void)
     glTranslatef(10, 45, -0.5);
     glutSolidSphere(4, 32, 32);
     glPopMatrix();
-
     glBegin(GL_POLYGON);//gedung tinggi 2 lantai belakang pintu
     glColor3f(0.88, 0.78, 0.78);
     glVertex3f(350, 45, -240);
@@ -3143,10 +3154,15 @@ void display(void)
     glEnd();
     glBegin(GL_POLYGON);//layar tv biru
     glColor3f(0, 0, 0.7);
-    glVertex3f(-268.1, 142, -38);
-    glVertex3f(-268.1, 142, 28);
-    glVertex3f(-268.1, 198, 28);
-    glVertex3f(-268.1, 198, -38);
+    glVertex3f(tva, 142, -38);
+    glVertex3f(tva, 142, 28);
+    glVertex3f(tva, 198, 28);
+    glVertex3f(tva, 198, -38);
+    glEnd();
+    glBegin(GL_LINES);//animasi tv
+    glColor3f(1,1,1);
+    glVertex3f(-267.9,142,28);
+    glVertex3f(-267.9,142,tvb);
     glEnd();
 
     //rak buku1
